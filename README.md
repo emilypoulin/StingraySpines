@@ -47,18 +47,24 @@ Analyses were done in the R statistical environment, version 4.4.1.
 
 Table of length equal to number of sampled stingray species (30), with the following columns:
 
-* **Habitat:** Habitat classification (marine or freshwater)
-* **Family:** Taxonomic family
-* **PhyloSpp:** Species names matching the phylogeny
-* **Dorsoventral:** Average first principal stress under dorsoventral bending (from FEA modeling)
-* **Lateral:** Average first principal stress under lateral bending (from FEA modeling)
-* **SM50:** Second moment of area at spine midpoint (from micro-CT scan data)
-* **IncludedAngle:** Measure of tip sharpness (from micro-CT scan data)
-* **SerrationAngle:** Orientation of serration relative to the primary spine axis (from micro-CT scan data)
-* **PropSerrated:** Proportion serrated; length of serrated edge divided by total spine length (from micro-CT scan data)
-* **SerrationLength:** Length of an individual serration at spine midpoint divided by total spine length (from micro-CT scan data)
-* **SA.Vol:** Surface area to volume ratio (from micro-CT scan data)
-* **SpineAR:** Aspect ratio; spine length divided by greatest width (from micro-CT scan data)
+### Variable Definitions and Units
+
+Unless otherwise noted, all measurements are unitless ratios derived from micro-CT scan data.
+
+* **Habitat:** Habitat classification coded as:
+  * `marine` = marine species
+  * `freshwater` = freshwater species
+* **Family:** Taxonomic family designation.
+* **PhyloSpp:** Species names (formatted to match phylogenetic tree tip labels).
+* **Dorsoventral:** Average first principal stress under dorsoventral bending simulations from finite element analysis (FEA) (units: MPa).
+* **Lateral:** Average first principal stress under lateral bending simulations from finite element analysis (FEA) (units: MPa).
+* **SM50:** Second moment of area measured at 50% of spine length from the base (units: mm^4).
+* **IncludedAngle:** Spine tip included angle representing tip sharpness (units: degrees).
+* **SerrationAngle:** Angle of serration orientation relative to the primary spine axis (units: degrees).
+* **PropSerrated:** Proportion of total spine length containing serrations (unitless proportion, ranging from 0–1).
+* **SerrationLength:** Length of an individual serration at spine midpoint divided by total spine length (unitless ratio).
+* **SA.Vol:** Surface area-to-volume ratio of the spine (units: mm^-1).
+* **SpineAR:** Spine aspect ratio calculated as spine length divided by maximum spine width (unitless ratio).
 
 ### 2. DistributionOfTrees.nex
 
@@ -127,5 +133,3 @@ R code for re-running MANOVA, ANOVA, and PGLS analyses across stingray species w
 ### 4. Puncture_Removal.R
 
 R code analyzing dynamic and quasi-static performance of physical models in puncture and removal tests. Includes ANOVA, Tukey HSD post-hoc tests, and figure generation.
-
-## Data associated with this repository are released under CC0
